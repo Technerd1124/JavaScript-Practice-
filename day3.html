@@ -55,21 +55,19 @@
             let SubResult = document.getElementById("SubResult");
             let PaybResult = document.getElementById("PaybResult");
 
-            VisaBtn.disabled = true;
-            MasterBtn.disabled = true;
-            PayPalBtn.disabled = true;
-            let  flag = false;
+            MycheckBtn.onchange = function () {
+                if (MycheckBtn.checked) {
+                    SubResult.innerHTML = "You have subscribed";
+                    flag = true;
+                } else {
+                    SubResult.innerHTML = "You have unsubscribed";
+                    VisaBtn.disabled = false;
+                    MasterBtn.disabled = false;
+                    PayPalBtn.disabled = false;
+                }
 
-            MycheckBtn.onchange= function(){
-            if (MycheckBtn.checked) {
-                VisaBtn.disabled = false;
-                MasterBtn.disabled = false;
-                PayPalBtn.disabled = false;
 
-                flag = true;
             }
-            flag=false;
-        }
             SubmitBtn.onclick = function () {
                 // Subscribe Check 
                 if (flag) {
