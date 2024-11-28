@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 4 By Bro Code</title>
+  </head>
+  <body>
+    Enter Name :
+    <input type="text" id="username" />
+    <button onclick="callme()">Submit</button>
+
+    <h2 id="line"></h2>
+    <br />
+
+    <script>
+        /*
+      // 1.Tiranary Operators
+      //2.String Method
+      // Above Topics Are Already known to me so didn't Practice
+  
+    
+      let pn = "123-122-33-42";
+      let phoneNumber = pn.replaceAll("-", "");
+      let phoneNumber2 = pn.padStart("", "");
+      document.write(phoneNumber + "<br>");
+      document.write(phoneNumber2 + "<br>");
+
+      let email = "Dhanshri1124@gmail.com";
+
+      // We will Extract first part of the Email to use it as username
+      let username = email.slice(0, email.indexOf("@"));
+      document.write("Welcome " + username + "<br>");
+
+      let extetion = email.slice(email.indexOf("@") + 1);
+      document.write("Your Email Extention is : " + extetion + "<br>");
+ */ 
+
+
+   // ----------- NO method Chaining -------------
+      function callme1() {
+        let user = String (document.getElementById("username").value);
+        let line = document.getElementById("line");
+        user = user.replaceAll(" ", "");
+        user = user.trim();
+        let cap = user.charAt(0);
+        cap =cap.toUpperCase();
+        let rest = user.slice(1);
+        rest = rest.toLowerCase();
+        let userName =cap+rest;
+        line.innerHTML=userName;
+       
+      }
+
+
+
+      // ------- With Method Chaining  -------- 
+
+      function callme() { 
+        let user = String (document.getElementById("username").value);
+
+        user = user.trim().charAt(0).toUpperCase() +user.trim().slice(1).toLowerCase();
+        line.innerHTML=user;
+
+    }
+
+
+    </script>
+  </body>
+</html>
