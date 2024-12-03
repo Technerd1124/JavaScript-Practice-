@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter By Bro Code</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .countDiv { 
+            border: 4px solid rgb(241, 14, 127);
+            padding: 6rem;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+        }
+        button{
+             width: 20rem;
+             padding: 20px;
+             margin: 0.7rem;
+             background-color: #6f42728d;
+             border-radius: 22vh;
+             font-family: Verdana, Geneva, Tahoma, sans-serif;
+             font-size: large;
+             color: #fff;
+             transition: background-color 0.25s ;
+             
+        }
+        button:hover{
+             background-color:#6f4272de;
+        }
+        #countlabel {
+             text-align: center;
+             font-size: 5rem;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div class="countDiv">
+        <h2 for="" id="countlabel" > 0</h2>
+        <br>
+        <button id="Dec"> Decrease</button>
+        <button id="reset"> reset</button>
+        <button id="Inc"> Increase </button>
+    </div>
+    <script>
+         let  decreaseBtn = document.getElementById("Dec");
+         let  IncreaseBtn = document.getElementById("Inc");
+         let  resetBtn = document.getElementById("reset");
+
+         const CountLabel = document.getElementById("countlabel");
+         let count = 0;
+
+         IncreaseBtn.onclick = function() {
+             count ++;
+             CountLabel.innerHTML=count;
+         }
+
+         decreaseBtn.onclick = function() {
+            if(count > 0 ){
+                count --;
+                CountLabel.innerHTML=count;
+            }
+        }
+        resetBtn.onclick = function() {
+                count =0;
+                CountLabel.innerHTML=count;
+        }
+    </script>
+</body>
+</html>
