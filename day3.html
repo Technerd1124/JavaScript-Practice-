@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=q, initial-scale=1.0">
+        <title> Day 3 By BroCode</title>
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 3vh;
+            }
+
+            b {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div>
+            <input type="checkbox" id="Subscribe">
+            <label for="Subscribe"> Subscribe</label>
+            <br>
+            <br>
+            <input type="radio" id="VisaBtn" name="Btn">
+            <label for="VisaBtn"> Visa </label>
+            <br>
+
+            <input type="radio" id="MasterBtn" name="Btn">
+            <label for="MasterBtn"> Master Card</label>
+            <br>
+            <input type="radio" id="PayPalBtn" name="Btn">
+            <label for="PayPalBtn"> PayPal</label>
+            <br>
+            <br>
+            <button type="submit" id="SubmitBtn"> Submit</button>
+        </div>
+
+        <div>
+            <h3 id="SubResult"></h3>
+            <h2 id="PaybResult"></h2>
+        </div>
+
+        <script>
+            //If Else Statements  - ( AlreadyKnew ,therefore Skipped)
+            // Checked Property
+
+            let MycheckBtn = document.getElementById("Subscribe");
+            let VisaBtn = document.getElementById("VisaBtn");
+            let MasterBtn = document.getElementById("MasterBtn");
+            let PayPalBtn = document.getElementById("PayPalBtn");
+
+            let SubmitBtn = document.getElementById("SubmitBtn");
+
+            let SubResult = document.getElementById("SubResult");
+            let PaybResult = document.getElementById("PaybResult");
+
+            MycheckBtn.onchange = function () {
+                if (MycheckBtn.checked) {
+                    SubResult.innerHTML = "You have subscribed";
+                    flag = true;
+                } else {
+                    SubResult.innerHTML = "You have unsubscribed";
+                    VisaBtn.disabled = false;
+                    MasterBtn.disabled = false;
+                    PayPalBtn.disabled = false;
+                }
+
+
+            }
+            SubmitBtn.onclick = function () {
+                // Subscribe Check 
+                if (flag) {
+                    SubResult.innerHTML = " You're SubScribed"
+                }
+
+                else {
+                    SubResult.innerHTML = "<b> You're Not SubScribed <b>"
+                }
+
+                // Pay Ment Checkboxes 
+                if (VisaBtn.checked) {
+                    PaybResult.innerHTML = " PayMent Mode : Visa "
+                }
+                else if (MasterBtn.checked) {
+                    PaybResult.innerHTML = " PayMent Mode : Master Card  "
+                }
+                else if (PayPalBtn.checked) {
+                    PaybResult.innerHTML = " PayMent Mode : PayPal "
+                }
+                else {
+                    PaybResult.innerHTML = "<b> Please Select a Payment Mode <b> "
+                }
+
+            }
+
+        </script>
+    </body>
+</html>

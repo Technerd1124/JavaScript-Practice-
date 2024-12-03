@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> My Js Practice Prg 1</title>
+        <style>
+            body { 
+                     font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+    </style>
+    </head>
+    <body>
+        
+        <center>
+            Enter Name 
+            <input type="text" id="username">
+            <br>
+        </center> 
+        <center>
+            <br>
+            <button onclick="getLog()"> Log In </button>
+        </center>
+        <br>
+     
+     <h1 id="name" style="text-align: center;"> Hello </h1>
+
+     <hr><hr>
+     <h1> Enter  Radius Of Circle </h1>
+     <input type="text"  id="redius">
+     <button onclick="calculate()"> Get Circumference </button>
+     <h2 id="showRes"> </h2>
+
+            <script>
+
+                function calculate() { 
+                     const PI = 3.1415;
+                     let redius,circum;
+                     redius = Number( document.getElementById("redius").value);
+                     circum = 2 * PI * redius ;
+                     document.getElementById("showRes").innerHTML = "Circumference is " + circum +"cm" ;
+                }
+
+
+                function getLog() {
+                    user = document.getElementById("username").value;
+                    document.getElementById("name").innerHTML = " Hello "+ user;
+                    document.getElementById("myp").innerHTML= " You're Welcome  ";
+                    var x ="12";
+                    x = Number(x);
+                    console.log(x , typeof x)
+             }
+          
+            </script>
+    </body>
+</html>

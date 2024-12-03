@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5 By Bro Code</title>
+  </head>
+  <body>
+    enter name
+    <input type="text" name="user" id="user" >
+
+    <button onclick="GoOn('dhee')">CLick it </button>
+    <p id="line"></p>
+  
+    <script>
+
+      // = Assignment Op
+      // == Comparision
+      // != Not Equal To
+      // === Strict Equal To
+      // !== Not Strict Equal To
+
+      //While Loop
+
+      let user = String(document.getElementById("user").value);
+      let line = document.getElementById("line");   
+
+      function GoOn(user) {
+        let i =0;
+         while(i <= 10){ 
+          line.innerHTML = `${user} is a good person`;
+          i++;
+         }
+      }
+    </script>
+  </body>
+</html>
