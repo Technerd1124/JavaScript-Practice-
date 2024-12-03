@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Day 7 With Bro code </title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Day 7 With Bro code </title>
+        <style>
+            body{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+            }
+        .operation{
+            border: 2px solid gray;
+            position: relative;
+            margin-top: 30vh;
+            padding:5vh;
+            display: flex;
+            flex-direction:column;
+            width: auto;
+            gap: 4vh;
+            justify-content: center;
+            align-items:left;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="operation">
+            <div>
+                <label for="no1">No1 </label>
+                <input type="text" name="no1">
+            </div>
+            <div>
+                <label for="no2">No1 </label>
+                <input type="text" name="no2">
+
+            </div>
+
+            <select name="operators" >
+                <option value="add"> Addition (+) </option>
+                <option value="sub"> Subtract (-) </option>
+                <option value="mul"> Multipliction (*) </option>
+                <option value="div"> Division (/) </option>
+                <option value="modit"> Modulas (%) </option>
+            </select>
+            <button type="submit" onsubmit="perform(operators.this.value)"> Submit </button>
+
+            <b id="result"> Result : </b>
+        </div>
+
+        <script>
+
+          
     
-</body>
+    function perform(op){
+        var a = document.getElementById("no1").value;
+        var b = document.getElementById("no2").value;
+        var res = document.getElementById("result")
+
+        switch (op){
+            case "add" : 
+            if(isNaN(a) || isNaN(b)){
+                alert("Please enter a valid number");
+            }
+            else{
+                res.textContent = ` Result ${a} + ${b}: ` + (parseInt(a) + parseInt(b))
+            }
+            break;
+
+            case "sub" : 
+            res.textContent = ` Result ${a} - ${b}: ` + (parseInt(a) + parseInt(b))
+            break;
+
+            case "mul":
+            res.textContent = ` Result ${a} x ${b}: ` + (parseInt(a) * parseInt(b))
+
+            break
+
+            case "div":
+            if(b == 0){
+                res.textContent ="<r> 0 cannot be Divisble <r>"
+            }
+            else{
+                res.textContent = ` Result ${a} / ${b}: ` + (parseFloat(a) / parseFloat(b));
+            }
+            break;
+
+            case "modit":
+
+            break;
+
+          
+        }//switch
+
+
+
+    }//function
+      
+    </script>
+    </body>
 </html>
