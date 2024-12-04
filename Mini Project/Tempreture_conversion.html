@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Temperature Conversion </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            position: relative;
+            background-color: hsl(0, 0%, 95%);
+            color: #ffff;
+            font-size: large;
+            font-weight: 700;
+        }
+
+        h1 {
+            color: hsl(223, 100%, 64%);
+        }
+        
+        form {
+            background-color: hsla(0, 18%, 11%, 0.577);
+            position: fixed;
+            text-align: center;
+            max-width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 5px;
+            position: relative;
+            top: 6vh;
+            z-index: 100;
+        }
+
+        #tempNo {
+            border: 2px solid red;
+            padding: 10px;
+        }
+
+        button {
+            padding: 2vh;
+            background: rgba(17, 33, 205, 0.658);
+            width: 90%;
+            font-size: large;
+            color: #ffff;
+        }
+
+        #imgme {
+            position: absolute;
+            z-index: 10;
+            opacity: 0.5;
+        }
+
+        .error {
+            color: red;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <img src="./temp.avif" alt="" id="imgme" width="100%" height="700px">
+    <form action="#">
+        <h4> Temperature Converter </h4>
+        <input type="number" id="tempNo" value="0">
+        <br><br>
+        
+        <div>
+            <input type="radio" name="unit" id="toFar">
+            <label for="toFar">Celsius ➡️ Fahrenheit </label>
+        </div>
+        <br>
+        <div>
+            <input type="radio" name="unit" id="tocel">
+            <label for="tocel"> Fahrenheit ➡️ Celsius </label>
+        </div>
+        <br>
+        
+        <p id="line"></p>
+        <br>
+
+        <p id="res"></p>
+        <button type="button" onclick="convert()">Submit</button>
+    </form>
+
+    <div>
+    </div>
+
+    <script>
+        function convert() {
+            var temp1 = document.getElementById('tempNo').value;
+            var toC = document.getElementById('tocel');
+            var toF = document.getElementById('toFar');
+            var line = document.getElementById("line");
+            var result = document.getElementById("res");
+
+            // Clear any previous error message
+            line.innerHTML = "";
+
+            if (toC.checked) {
+                // Celsius to Fahrenheit: F = (C * 9/5) + 32
+                var c = parseFloat(temp1);
+                var f = (c * 9/5) + 32;
+                result.innerHTML = `${c} Celsius is equal to ${f} Fahrenheit`;
+            } else if (toF.checked) {
+                // Fahrenheit to Celsius: C = (F - 32) * 5/9
+                var f = parseFloat(temp1);
+                var c = (f - 32) * 5/9;
+                result.innerHTML = `${f} Fahrenheit is equal to ${c} Celsius`;
+            } else {
+                // Error message if no unit is selected
+                line.innerHTML = `<span class="error">Please Select a Conversion Unit</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
