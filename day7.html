@@ -4,29 +4,69 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Day 7 With Bro code </title>
-        <style>
-            body{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-            }
-
-            r{
-                color: red;
-            }
-        .operation{
-            border: 2px solid gray;
-            position: relative;
-            margin-top: 30vh;
-            padding:5vh;
+    <style>
+        body {
             display: flex;
-            flex-direction:column;
-            width: auto;
-            gap: 4vh;
             justify-content: center;
-            align-items:left;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .operation {
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            gap: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .operation label {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .operation input[type="text"], .operation select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .operation button {
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .operation button:hover {
+            background: #0056b3;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        r {
+            color: red;
         }
     </style>
     </head>
@@ -63,15 +103,19 @@
         var b = Number(document.getElementById("num2").value);
         var res = document.getElementById("result");
         var op= document.getElementById("selectElement").value;
-
+        if(isNaN(a) || isNaN(b)){
+            alert("Please enter a valid number");
+            return
+        }
+        if( a === "" || b === ""){
+            alert(" Numebr fields Cannot be Empty ");
+            return
+        }
+        else{
         switch (op){
             case "add" : 
-            if(isNaN(a) || isNaN(b)){
-                alert("Please enter a valid number");
-            }
-            else{
                 res.textContent = ` Result ${a} + ${b}: ` + (parseInt(a) + parseInt(b))
-            }
+            
             break;
 
             case "sub" : 
@@ -93,12 +137,14 @@
             break;
 
             case "modit":
-
+            res.textContent = ` Result ${a} % ${b}: ` + (parseFloat(a) % parseFloat(b));
             break;
+
 
           
         }//switch
 
+    }
 
 
     }//function
