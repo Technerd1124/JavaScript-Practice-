@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Dice Game By bro code</title>
+        <style>
+            * {
+                font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+                background: linear-gradient(to right, #4facfe, #00f2fe);
+            }
+            .box {
+                display: flex;
+                flex-wrap: wrap; /* Allow items to wrap */
+                gap: 10px; /* Space between items */
+                width: 90%;
+                max-width: 600px;
+                background: #ffffff;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            h2 {
+                color: #006666;
+                text-align: center;
+            }
+            label {
+                font-size: 18px;
+                color: #333;
+            }
+            input[type="number"] {
+                width: 60px;
+                padding: 5px;
+                margin-left: 10px;
+                border: 1px solid teal;
+                border-radius: 5px;
+                text-align: center;
+            }
+            button {
+                width: 100%;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                background: #008000;
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s ease-in-out;
+            }
+            button:hover {
+                background: #004d00;
+            }
+            #DiceResult {
+                font-size: 18px;
+                font-weight: bold;
+                color: #006666;
+                text-align: center;
+            }
+            #DiceImg {
+                flex: 1 1 calc(50% - 10px); /* 50% width minus the gap */
+                background: lightseagreen;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 18px;
+            }
+          
+            #DiceResult{
+                position: relative;
+                top: 2rem;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        <div class="box">
+            <div>
+
+                <h2>Dice Roller</h2>
+                <div>
+                    <label for> # Numbe of Dice </label>
+                    <input type="number" name="diceNO" id="diceNo" value="1" min="1" max="6">
+                </div>
+                <br>
+                <br>
+                <button onclick="RollIt()"> Roll Dice </button>
+                
+                <br>
+                <p id="DiceResult"> Dice : </p>
+            </div>
+            <div id="DiceImg"> </div>
+        </div>
+    </body>
+
+    <script>
+        
+        function RollIt() {
+            const NoDic = document.getElementById("diceNo").value;
+            const result = document.getElementById("DiceResult");
+            const Diceimg = document.getElementById("DiceImg");
+
+            const values =[];
+            const images=[];
+            for (let i = 0; i < NoDic; i++) {
+                const randomNO = Math.floor(Math.random() * 6 ) +1;
+                values.push(randomNO);
+                images.push(`<img src="${randomNO}.png"  width="120" height="100" >`);
+            
+            }
+        
+            result.textContent= ` Dice:  ${values.join(',')}` ;
+            Diceimg.innerHTML = images.join(''); 
+
+            }
+    </script>
+</html>

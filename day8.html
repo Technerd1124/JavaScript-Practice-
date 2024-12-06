@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Day 8 By Bro Code 😎 </title>
+</head>
+<body>
+    
+  
+    <script>
+
+        // 1 Spread Operator "... "
+        // it allows an iterable such as array or string to be expand 
+        //into saperate element  ( Unpack the Elements )
+        document.write("<h3>Spread Operator Example </h3> <br> ");
+        var fruits = ['apple','mango','banana','coconut'];
+        var veg = ['patato','tamato','onion','spanicsh'];
+
+        var food =[...fruits,...veg ,"egg","milk"];
+        document.write(food);
+        //o/p: apple,mango,banana,coconut,patato,tamato,onion,spanicsh,egg,milk
+    
+        //2 Rest Parameters 
+        // it combines elements and bundel them into an Array 
+        // it allows a function to accept a variable number of arguments 
+        //function sum(...args)
+    
+        document.write("<br> <hr>")
+        document.write("<h3> Rest Operator Example </h3> <br> ");
+        
+        var food1 ="pizza",food2="burger",food3="ramen",food4="sushi";
+
+        function OpenFridge(...foods){
+            document.write(foods);
+            document.write("<br> ")
+            document.write( "type of Food = " + typeof food )
+        }
+
+
+        OpenFridge(food1,food2,food3,food4);
+
+        document.write("<br> <hr>")
+        document.write("<h3> Sum of N numebrs using rest Parameters </h3> <br> ");
+
+        function sum(...args){
+            var res=0;
+            for(let i of args){
+                res +=i;
+            }
+            return res;
+        }
+
+        function getAverage(...numebrs) { 
+
+            var res=0;
+            for(let j of numebrs) { 
+                res +=j;
+            }
+
+            return res/numebrs.length;
+        }
+        document.write(sum(1,232,8));
+        document.write("<br> Average of the Numbers : ")
+        document.write(getAverage(1,232,8));
+        
+    </script>
+</body>
+</html>
