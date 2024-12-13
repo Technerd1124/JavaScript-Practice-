@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Day 9 </title>
+    </head>
+    <body>
+
+        <script>
+            // For Each method  
+            // forEach()  : this method is use ot iterate throw an Array elements 
+            // it takes a callback function as an argument 
+            // ******* Performs the specified action for each element in an array.
+            // the callback function is called for each element in the array 
+            // the callback function takes three arguments : element , index , array
+
+
+            let fruits = ['apple', 'banana', 'orange', 'kivi'];            
+            function capitlize(fruits) {
+                var alpha;
+                 console.log(fruits)
+                for( i in fruits ){
+                    var alpha =fruits[i];
+                  alpha = alpha.charAt(0).toUpperCase() + alpha.slice(1).toLowerCase();
+                  document.write(alpha +"<br>");
+                 
+                }
+            
+
+            }
+
+            var r = capitlize(fruits);
+
+
+        </script>
+    </body>
+</html>
