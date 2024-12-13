@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Maps - In JavaScript </title>
+</head>
+<body>
+    
+    <script>
+        // Maps() : Accepts a callback and applies  that function to each elemetns 
+        // of the array , then return a new Array 
+
+
+        const nums=[10,20,30,40,50];
+        const sqrs = nums.map(seqr_out)
+        const cudes = nums.map(cube_out)
+
+    //    document.write(sqrs);
+    //    document.write("<br>")
+   //     document.write(cudes);
+
+        function seqr_out(element) {
+             return Math.pow(element,2);
+        }
+
+        function cube_out(element){
+            return Math.pow(element,3);
+        }
+
+
+
+
+
+        const names = ['john','lily','amiy','natasha'];
+
+        function toCap(letters)
+        {
+            let result =[];
+            for(let i in letters){
+                 var line;
+                 line = letters[i];
+                 line = line.charAt(0).toUpperCase() + line.slice(1).toLowerCase();
+                 result.push(line)
+                
+                }
+                return result;
+            }
+            var l = toCap(names)
+    
+            document.write(l);
+
+            /// Alertanative Function  for Capitalzing First Latter of an Array Elements , by Implementing Maps within a Function 
+
+            function Capitlize(letters) {
+                return letters.map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
+            }
+
+            document.write( '<br> '+Capitlize(names))
+
+    </script>
+</body>
+</html>
