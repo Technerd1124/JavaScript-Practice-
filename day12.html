@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reduce method</title>
+</head>
+<body>
+    
+    <script>
+
+    // .reduce() : reduces an array and retuns a single Elements  
+        var prices = [10,33,32,55,50,100];
+        var sum = prices.reduce(sum);
+     //document.write(sum)
+        function sum(previos , next){
+            return previos + next;
+        }
+
+        // Find Maximum Number - z
+        var no = [12,34,444,45,45,3,322,23];
+        var max = no.reduce(maxno);
+        var min = no.reduce(minno);
+        document.writeln(max)
+        document.writeln(min)
+
+        function maxno( previos ,next){
+            return Math.max(previos,next);
+        }
+        function minno( previos ,next){
+            return Math.min(previos,next);
+        }
+
+    </script>
+</body>
+</html>

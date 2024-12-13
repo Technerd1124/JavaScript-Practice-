@@ -12,10 +12,34 @@
 
         var nums=[2,4,5,6,7,1,65,43];
         var  evenNums = nums.filter(Find_even)
-        document.write(evenNums)
+      //     document.write(evenNums)
+      //  document.write('<br>');
+        var isodd = nums.filter(Find_odds)
+     //      document.write(isodd);
 
         function Find_even(arr){ 
-            return arr % 2  == 0;
+            return arr % 2  == 0;s
+        }
+
+        function Find_odds(arr){ 
+            return arr % 2 != 0;
+        }
+
+        //  Example 2  
+
+        var ages =[12,13,18,17,15,15,21,19,19,16];
+        var valids = ages.filter(valid_age);
+        var inValids = ages.filter(inValid_age)
+        document.write(valids + "<br>");
+        document.write( inValids)
+         
+        function valid_age(arr){ 
+
+          return arr >= 18 ? arr : false;
+        }
+
+        function inValid_age(arr){
+            return arr < 18 ? arr : false;
         }
     </script>
 </body>
