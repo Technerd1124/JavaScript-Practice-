@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Defining Classes in java </title>
+</head>
+<body>
+    
+
+     <script>
+        var salesTax = 0.05;
+        class product{
+            constructor(name,price){
+                this.Name = name,
+                this.Price = price
+            }
+        
+          display() {
+             document.write(" We are in the class Product <br>");
+             document.write(" Name: " + this.Name + "<br>");
+             document.write(" Price: $" + this.Price + "<br>");
+          }
+
+          calculate(salesTax){
+            return  this.Price +(this.Price * salesTax);
+          }
+        }
+
+
+        var p1 = new product("Ipad",29999);
+   //     p1.display();
+   //     p1.calculate(salesTax);
+      //  document.write(" Total Price: $ " + p1.calculate(salesTax));
+
+
+        /// Static Keyword  in javascript : 
+        // Keyword thst defines properties or Method that belongs to a class it self
+        //rather than  the object created  From that class ( class owns anything static , not the Object )
+
+
+        class user { 
+            static username = "John";
+            static password = "1234";
+
+            static getUser(username){
+                 return `UserName : ${this.username} <br>`;
+
+            }
+             getpassword(){
+
+                return ` Password  : ${this.password} <br>`;
+            }
+        }
+
+
+        // SO here we used properits and methods of this clas user without  
+        // creating any Object on  it -
+
+        document.write(user.getUser())
+        document.write(u.getpassword())
+    </script>
+</body>
+</html>
