@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Javascriipt Objects </title>
+</head>
+<body>
+    
+    <script>
+ // Javascript Objects  
+
+ const fruits  = [ { name :"Apple" ,Color:"red" ,price:80} ,
+                    {name :"Banana" ,Color:"yellow" ,price:60 },
+                    { name :"Avacado" ,Color:"Green" ,price:300},
+                    {name :"Orange" ,Color:"Orange" ,price:50 }   
+                 ];
+
+
+// --------- Filter() ---------
+var redFruits= fruits.filter(fruit =>  fruit.Color == "red");
+var lowPrice= fruits.filter(fruit => fruit.price <100 );
+
+//console.log(lowPrice);
+//console.log(redFruits);
+        
+    
+ // ---------- reduce() --------
+
+ var highPrice = fruits.reduce((prev,nxt) =>
+    nxt.price > prev.price ?
+     nxt : prev
+  );
+    
+  var lowPrices = fruits.reduce((back,next)=>
+             back.price > next.price ?
+             next : back
+    );
+ console.log(highPrice);
+ console.log(lowPrices);
+    </script>
+</body>
+</html>
