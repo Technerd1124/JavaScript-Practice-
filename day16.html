@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort() Method</title>
+</head>
+<body>
+    
+    <script>
+         // Sort() : used to sort an array of elemetns in place 
+        // Sorts elements as string  in lexicography oder , not in Aphabatical order 
+        // lexicography ( aphabate + number + symbols ) as A String 
+
+         var alpha =['a','i','c','g','t']
+         var sortedAlpha = alpha.sort();
+         document.write( " Sorted Alphabate : "+sortedAlpha)
+
+         var number =[10,20,30,50,80,78,67];
+         var sortedNumber = number.sort((a,b) => a-b);
+         document.write( "<br>"+" Sorted Number  Ascending Order : "+sortedNumber)
+         var dec = number.sort((a,b) => b-a)
+         document.write( "<br>"+" Sorted Number  Descending  Order : "+sortedNumber)
+        
+
+
+
+         // Objects 
+
+         const person1 = {
+            name : "John",
+            age : 25,
+            city : "New York",
+            isEmployee :true,
+            sayHello :  ()=> { document.write(` john saying Hello `)}
+         }
+
+         person1.sayHello();
+        
+
+            //1 . 
+        // This  :keyword in javaScript 
+        // This keyword is used to refer to the current object or its properties/methods.
+        // It is used to access the current object's properties and methods.
+
+        // This Keyword Does'nt Work with => arrow Function 
+
+        var person = { 
+            name: "John",
+            eyeCOlor :"brown",
+            saying :function () { document.write(`this is   ${this.name}`)},
+
+        }
+        person.saying();
+
+
+
+    </script>
+</body>
+</html>
