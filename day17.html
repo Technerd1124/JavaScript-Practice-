@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Constructor /  Destrcutors t</title>
+</head>
+<body>
+    
+     <script>
+     
+
+        // Constructor in javascript 
+        // Constructor is a special method that is used to initialize the properties of a class
+        // It is called when an object is created from a class
+        // It is used to set the initial state of an object
+        // It is used to initialize the properties of an object
+        
+
+        function  car( name ,model,no ,color){
+            this.Name = name,
+            this.Model = model,
+            this.No = no ,
+            this.Color = color,
+            this.show = function(){ document.write(` ${this.Name} is my Fav Car`)}
+        }
+
+        const car1 = new car("jaguar","iSeres",1202,"red");
+        const car2 = new car("ford","Mustange",1807,"blue");
+
+        document.write(' constrctor and Desctortor' + "<br>");
+        document.write("<hr>") 
+
+        for(i in car1){
+            // here the i varible holds the key name 
+            if( i == "show"){
+                document.write(i+":")
+                car2.show();
+                continue;
+            }
+            document.write(i + " : " + car1[i] + "<br>");
+        }
+        document.write("<hr>")
+        for(i in car2){
+            // here the i varible holds the key name 
+            if( i == "show"){
+                document.write(i+":")
+                 car2.show();
+                continue;
+            }
+            document.write(i + " : " + car2[i] + "<br>");
+        }
+
+        car1.show();
+      
+     </script>
+</body>
+</html>
