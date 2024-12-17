@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Super Keyword In javaScript</title>
+</head>
+<body>
+    
+
+    <script> 
+        // Super Key Word in javaScript refers To the Super / Parent Class of the Class 
+
+
+        class Animal {
+             constructor( n ,a){
+                this.name = n;
+                this.age = a;
+             }
+
+            }
+        class Rabbit extends Animal{
+
+            constructor( name , age,speed){
+                super(name,age);
+                this.Speed =speed;
+               
+            }
+
+
+        }
+
+        class Fish extends Animal {
+             constructor(name ,age ,SwimSpeed){
+                super(name,age);
+                this.SwingSpeed = SwimSpeed;
+             }
+
+        }
+
+        const reb = new Rabbit("goku", 1,20);
+        const fish = new Fish("jolly", 3,10);
+
+    </script>
+</body>
+</html>
