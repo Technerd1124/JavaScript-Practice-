@@ -17,30 +17,35 @@
                 this.name = n;
                 this.age = a;
              }
-
+             display(){
+                document.write(" Inforamation of "+ this.name + "<br>");
+                document.write(" Name :" + this.name  + "<br>" );
+                document.write(" Age : " + this.age  + "<br>") ;
+                document.write(" Speed "+ this.Speed + "<br>")
+           }
             }
         class Rabbit extends Animal{
 
             constructor( name , age,speed){
                 super(name,age);
                 this.Speed =speed;
-               
-            }
 
+            }
 
         }
 
         class Fish extends Animal {
-             constructor(name ,age ,SwimSpeed){
+             constructor(name ,age ,speed){
                 super(name,age);
-                this.SwingSpeed = SwimSpeed;
+                this.Speed = speed;
              }
 
         }
-
         const reb = new Rabbit("goku", 1,20);
+        reb.display();
+        document.write("<br> <hr> ")
         const fish = new Fish("jolly", 3,10);
-
+        fish.display();
     </script>
 </body>
 </html>
