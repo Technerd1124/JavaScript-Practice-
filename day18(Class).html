@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Defining Classes in java </title>
-</head>
-<body>
-    
+  </head>
+  <body>
 
-     <script>
+    <script>
         var salesTax = 0.05;
         class product{
             constructor(name,price){
@@ -54,11 +53,53 @@
         }
 
 
-        // SO here we used properits and methods of this clas user without  
-        // creating any Object on  it -
+        // SO here we used properits and methods of this clas user without  creating any Object of  it -
 
         document.write(user.getUser())
-        document.write(u.getpassword())
+    
+
+        document.write("<hr>")
+
+        document.write(" Exmaple 2 ")
+        document.write("<br>")
+        document.write("<br>")
+
+        class student { 
+           
+          static studentCount =0;
+          static StudentList =[];
+
+          constructor(name){
+            this.StudentName =name,
+            student.studentCount++;
+            student.StudentList.push(name);
+          }
+
+          static studentPresent(){ 
+            document.write(` Total ${this.studentCount} Students are Present in Class`);
+          }
+           
+          static getStudents(){
+            document.write(" <br> Present Student List : <br>")
+             for(var i=0; i <=student.StudentList.length-1;i++){
+              document.write(`${student.StudentList[i]} <br>`)
+            
+             }
+             
+          }
+        }
+
+
+        var s1 = new student("viraj");
+        var s2 = new student("jiya");
+        var s3 = new student("Lily");
+
+
+// Displaying student details
+student.studentPresent();
+student.getStudents();
+
     </script>
-</body>
+
+  </body>
 </html>

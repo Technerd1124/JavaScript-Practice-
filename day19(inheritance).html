@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inheritacne In Java script</title>
+</head>
+<body>
+    
+    <script>
+        // Inheritacne in javaScript 
+
+        class Animal {
+            alive = true; 
+
+            constructor(name){
+                this.name = name;
+            }
+         
+            eat() { 
+                document.write( this.name + " Is Eating  <br>")
+            }
+
+            sleep() { 
+                document.write( this.name + " Is Sleeeping   <br>")
+            }
+
+        }
+
+        class Rabbit  extends Animal {
+            name ="rabit";
+
+            run(){
+                 document.write(` ${this.name} Is Running  <br>`)
+            }
+
+        }
+        
+        class Fish  extends Animal {
+            name ="JellyFish";
+
+            swimg(){
+                document.write(` ${this.name} Is Swiming  <br> `)
+
+            }
+        }
+
+
+     
+        var a1 =new Rabbit();
+        a1.eat();
+        a1.run();
+        a1.sleep();
+    
+        document.write("<hr>")
+        var a2 = new Fish();
+        a2.eat();
+        a2.sleep();
+        a2.swimg();
+
+
+    </script>
+</body>
+</html>
