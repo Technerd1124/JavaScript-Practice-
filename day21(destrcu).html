@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Destrcuctor in JavaScript </title>
+</head>
+<body>
+    
+
+    <script>
+         // Destrcuctor : Extracts Values from  Object Or Array 
+
+         // [] : Performse Array Destrctoring 
+         // {} : Performse Object Destrctuctoring 
+
+
+   //- ------- Example -1 Swap The Values of 2 Variavbles --------- 
+
+
+   document.write(" Example 1  <br>")
+
+          let a =1;
+          let b= 2;
+
+          document.write(" Value Of A =" + a);
+          document.write("<br>  Value Of B =" + b);
+          [a,b] = [b,a]
+
+          document.write("<br> Value Of A =" + a);
+          document.write("<br>  Value Of B =" + b);
+        document.write("<hr>")
+
+    //- ------- Example 2 - Swaping  the Element Postition in an Array--------- 
+    document.write(" Example 2 <br>")
+    // Basic Syntax: You can extract values from an array and assign them to variables.
+    var color = ['red','blue','white','pink' ,'brown','beige'];
+    document.write(color)
+    document.write("<br>")
+    let last =color.length-1;
+    [color[0], color[last]] =  [ color[last],color[0]];
+    document.write(color)
+    document.write("<hr>")
+
+
+        //- ------- Example 3 - Say--------- 
+
+    document.write(" Example 3 <br>")
+
+    // Using the Rest Operator: You can collect the remaining elements into a single variable.
+    const c= [first,second,third,...extras] = color;
+    for( a in c){
+        document.write(' Index :'+a + "  = "+ c[a] + "<br>")
+    }
+    document.write("<hr>")
+
+ //- ------- Example 4 -  Object Destructing  -------- 
+
+ document.write(" Example 4 <br>")
+ 
+ const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50
+  };
+  
+
+  // Destructuring
+//  Skipping Elements: You can skip elements in the array by leaving a blank space.
+  let {lastName, firstName} = person;
+
+  for(i in person){
+
+      document.write( i + ":"+person[i] +"<br>")
+  }
+
+ //var  {firstName,LastName} = FullName;
+
+  
+
+ 
+ //- ------- Example 5  -   Destructing  via Functions  -------- 
+ document.write("<hr>");
+
+ function nums() {
+     
+    return  [12,34,45,6,2,22,44,56,78];
+ }
+ 
+  var no = [ zero ,one , two , ...restNo] = nums();
+
+  document.write(" Rest Number After Index [2]  : "+ restNo + "<br> ");
+
+</script>
+
+</body>
+</html>

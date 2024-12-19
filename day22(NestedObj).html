@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nested Objects in JavaScript ||  Array Object In JavaScript </title>
+</head>
+<body>
+    
+    <script>
+        // Nested Object 
+
+         const person = {
+             FullName :" Dhanshri Tanaji Londhe",
+             isStudent : true,
+             Age : 25,
+             hobbies : [ "karate", "Baking" ," Cooking"],
+             address : {
+                State :"Maharashra",
+                city: "Pune",
+                pincode : 411021 
+             }
+
+         }
+
+         for( p in person) {
+             if( p == "address"){
+                 continue;
+                }
+             document.write( p +":" + person[p] + "<br>");
+            }
+            document.write(" Address:")
+            for( var a in person.address){
+               document.write( a +":" + person.address[a] + "<br>");
+
+            }
+
+
+    // Exmple 2  - Object WIth COntrcture Class using Rest Operator For Rest Object Defination 
+    document.write("<hr>")
+    document.write("Exmple 2 <br>")
+
+     class Local {
+         constructor( name , age , ...address) {
+             this.Name =name,
+             this.Age =age,
+             this.FullAddress = address
+         }
+
+         getData() {
+            document.write("Name :"+ this.Name + "<br>");
+            document.write(  " Age  : " + this.Age +"<br>");
+            document.write( "Full Address : "+ this.FullAddress +"<br>");
+         }
+     }
+     var person1b= new Local("Dhanshree" ,"19" , " Pune" ," Sutarwadi" ," 411021");
+     var person2b= new Local("Nidhi" ,"19" , " Pune-wakad" ," wakad" ," 411051");
+     person1b.getData();
+     person2b.getData();
+
+
+     // Array Of Object 
+
+      const ArrayObj = [
+       { name : "apple" , color :"red" , cal :1200},
+      { name : " PineApple" , color :"yellow" , cal :100 },
+      { name : " Green Apple" , color :" green" , cal :200}
+    ]; 
+    document.write("<hr>")
+
+ArrayObj.pop();
+ArrayObj.push( {name :"orge" , color :"org", cal :"1200"} );
+
+    for(i in ArrayObj){
+         document.write( "Fruit Name : "+ ArrayObj[i].name + " <br> Color :  " + ArrayObj[i].color + " <br> Calories :"+ ArrayObj[i].cal + "<br> <hr>"  )
+    }
+ 
+
+    </script>
+</body>
+</html>
