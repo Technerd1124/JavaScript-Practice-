@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sort Method</title>
+</head>
+<body>
+    
+    <script>
+
+   
+    // Sort() : used to sort an array of elemetns in place 
+    // Sorts elements as string  in lexicography oder , not in Aphabatical order 
+    // lexicography ( aphabate + number + symbols ) as A String 
+
+     var alpha =['a','i','c','g','t']
+     var sortedAlpha = alpha.sort();
+     document.write( " Sorted Alphabate : "+sortedAlpha)
+
+     var number =[10,20,30,50,80,78,67];
+     var sortedNumber = number.sort((a,b) => a-b);
+     document.write( "<br>"+" Sorted Number  Ascending Order : "+sortedNumber)
+     var dec = number.sort((a,b) => b-a)
+     document.write( "<br>"+" Sorted Number  Descending  Order : "+sortedNumber)
+
+     var locals = [
+       { name :"john" , age: 12},
+       { name :"kyli" , age: 22},
+       { name :"dhana" , age:19},
+       { name :"sayli" , age: 18}
+     ]
+
+    // var adults = locals.filter( a => a.age > 18 ? a.age : false)
+
+    var adults = locals.sort( (a,b) => a.age  - b.age   )
+     console.log(adults)
+
+    
+    </script>
+
+
+
+</body>
+</html>

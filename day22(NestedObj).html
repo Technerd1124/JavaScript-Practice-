@@ -68,14 +68,22 @@
     ]; 
     document.write("<hr>")
 
-ArrayObj.pop();
-ArrayObj.push( {name :"orge" , color :"org", cal :"1200"} );
 
-    for(i in ArrayObj){
-         document.write( "Fruit Name : "+ ArrayObj[i].name + " <br> Color :  " + ArrayObj[i].color + " <br> Calories :"+ ArrayObj[i].cal + "<br> <hr>"  )
-    }
- 
+     // ------- map() ------
 
+     const fruitNames = ArrayObj.map( fruit => fruit.name);
+     const fruitColor = ArrayObj.map( fruit => fruit.color);
+     const calories = ArrayObj.map( fruit => fruit.cal);
+     console.log(fruitNames)
+     console.log(fruitColor)
+     console.log(calories)
+
+      // ---- Filter()  ( Should be use with a COndition  to  return a unique / Filtred  Array )
+     const RedFood = ArrayObj.filter(fruit =>  fruit.color == "red");
+     console.log(RedFood);
+     const helthy = ArrayObj.filter(f =>  f.cal < 1000 ? f.name :false)
+     console.log(helthy)
+     
     </script>
 </body>
 </html>
