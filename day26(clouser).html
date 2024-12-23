@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clousers in JavaScript ( Inner function ) </title>
+</head>
+<body>
+    
+    <script>
+
+        
+// Clousere = A Functiopn defined inside of another function ,
+// The inner Function has Access to the Variables and Scope of the Outer Function 
+// Allow For Private variables and state maintanance Used Frequently in JS FrameForks : React , Vue  , Angular 
+// Clousers are used to encapsulate data and methods that belong together
+// Clousers are used to create private variables and methods that can only be accessed by the outer
+// function and its inner functions
+
+        
+        function out() {
+            let msg = "We are in Outer Function";
+        
+            function inner() {
+               // console.log(msg);
+            }
+        
+            inner();
+        }
+     //   out();
+
+
+     function CreateCount(){
+         let count =0; 
+         function increment() { 
+             count ++;
+             console.log(` Count Incrased To  ${count} `);
+        }
+
+        function getCoutn(){
+             return count
+        }
+
+        return {increment ,getCoutn}
+     }
+
+   //  const counter  = CreateCount();
+   //  counter.increment();
+  //   counter.increment();
+
+  //   counter.count =3;
+    // console.log(counter.getCoutn())
+
+
+      //--------------- Exmaple 2 --------------
+
+      let score =0;
+
+      function increseScore(points){
+        score += points;
+        console.log(`+${points} Points`)
+      }
+
+      function decreaseScore(points){
+        score -=points;    
+            console.log(`  after Decreasing  Available Points - ${points} Points`)
+      }
+
+      function getScore(){
+         return score;
+      }
+
+    </script>
+</body>
+</html>

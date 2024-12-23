@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Data Object </title>
+</head>
+<body>
+    
+
+    <script>
+        //2024 =year
+        //0 = month = January 
+        // 1 = day 
+        // 2 = hours
+        // 3 = minutes
+        // 4 = seconds
+        // 5 = milliseconds
+    
+      //   const  date = new Date(2024,0,1,2,3,4,5);
+         const  date = new Date();
+         date.setFullYear(2023)
+         date.setMonth(10)
+         date.setDate(24)
+         date.setHours(12)
+         
+         const y = date.getFullYear()
+         const m = date.getMonth()
+         const d = date.getDate()
+         const hour = date.getHours();
+         const min = date.getMinutes();
+         const sec = date.getSeconds();
+         const DayW = date.getDay();
+
+
+         console.log(date);
+         console.log(y);
+         console.log(m);
+         console.log(d);
+         console.log(hour);
+         console.log(min)
+         console.log(sec)
+         console.log( "Day of the Week :" + DayW )
+
+    </script>
+</body>
+</html>
