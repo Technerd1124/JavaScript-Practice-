@@ -50,11 +50,26 @@
 
   //   counter.count =3;
     // console.log(counter.getCoutn())
-
+ 
 
       //--------------- Exmaple 2 --------------
 
-      let score =0;
+      function makeAdder(x) {
+        return function (y) {
+          return x + y;
+        };
+      }
+      
+      const add5 = makeAdder(5);
+      const add10 = makeAdder(10);
+      
+      console.log(add5(9)); 
+      console.log(add10(9)); //
+      //Output :
+      // 14  
+      //19
+      
+  let score =0;
 
       function increseScore(points){
         score += points;
@@ -70,6 +85,7 @@
          return score;
       }
 
+    
     </script>
 </body>
 </html>
