@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Error Handling - In JavaScript </title>
+</head>
+<body>
+
+    <script>
+        try{  
+          var x =3233232323;
+          Number(x)
+          if(isNaN(x)){
+            throw new Error(" oh no NAN");
+          }
+          if( x < 0){
+            throw new Error(" oh no nagative Number  ");
+          }
+
+        console.log(" yeye Nice Number")
+      }
+     catch(error){
+
+        console.log(error);
+    }
+    finally{
+             console.log(" finally  block Executed ")
+        }
+    </script>
+
+</body>
+</html>
