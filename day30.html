@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM in Javascript</title>
+    <style>
+        .box{
+            background:hotpink;
+            margin: 12px;
+            padding: 12px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>hello</h2>
+    <div class="box"> 1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <p id="line"></p>
+
+     <!-- 2 ------- Element Selector ------  -->
+
+
+
+
+    <button onclick="removeBox()" > Remove Boxex </button>
+    <button onclick="removeBoxAll()" > Remove  All Boxex </button>
+    <script>
+        
+        //Element Selector = MEthod used to Target and Manipulate HTML elements THey Allow you to select one or 
+        //Multiple HTML ELements from the DOM ( DOcument Object Model )
+
+        // 1.Document.getElementById()      //Element or Null
+        // 2.-||-.getElementsClassName()   // HTML Collection 
+        // 3.-||-.getElementsByTagname()   // HTML Collection
+        // 4.-||-.querySelector()          // Element or Null
+        // 5.-||-.querySelectorAll()       // NodeList
+
+        
+        function removeBox(){
+
+            var lines = document.getElementById("line");
+               
+            var boxes = document.querySelector(".box");
+
+            if(boxes){
+                boxes.remove();
+            }
+            else{
+               lines.innerHTML =" No more Boxes To Remove"
+
+            }
+        }
+        function removeBoxAll(){
+
+            var boxes4 = document.querySelectorAll(".box");
+            if(boxes4){
+                for(var  i =0; i<boxes4.length;i++){
+                    boxes4[i].remove();
+                    if(i==boxes4.length-1 ){
+                        document.getElementById("line").innerHTML = "All Boxes Removed";
+                    }
+                }
+            }
+        
+    }
+        
+        document.body.style.backgroundColor = "pink";
+        document.body.style.color = "blue";
+
+    </script>
+</body>
+</html>
