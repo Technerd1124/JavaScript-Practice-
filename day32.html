@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mouse Events in JavaXSCript</title>
+    <style>
+        body{
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box{ 
+            background:yellowgreen;
+            width:auto;
+            height: auto;
+            padding: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <p id="myp"></p>
+    <br>
+    <div id="box">
+        click me
+        🫡
+    </div>
+
+    <script>
+
+        function changeBg(event){
+         //   document.getElementById("myp").innerHTML = event;
+         var txt = event.target.style;
+         txt.backgroundColor ='pink';
+         event.target.innerHTML =" oh no u Clicked 😶‍🌫️";
+        }
+        const myid = document.getElementById("box");
+        myid.addEventListener("dblclick", function remov(event){
+            event.target.style.backgroundColor="cyan"
+            event.target.innerHTML="oh no you DOuble Clicked 😭 "
+
+        });
+        myid.addEventListener("click", changeBg);
+    
+        
+    </script>
+</body>
+</html>

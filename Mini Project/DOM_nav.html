@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ADDING  AND CHANGING ELEMENTS</title>
+    <style>
+        .box{
+            border: 1px solid ;
+            width: 100%;
+            height:100px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    
+<div class="box" id="mybox">
+    BOx 1
+</div>
+<div class="box" id="mybox2">
+    BOx 2
+</div>
+<div class="box" id="mybox3">
+    BOx 3
+</div>
+<div class="box">
+    BOx 4
+</div>
+
+<script>
+
+    /// ================ EXAMPLE 1 < h1> ====================
+
+    // STEP 1   CREATE THE ELEMENT 
+     const newHL = document.createElement("h1");
+
+     // STEP 2  ADD ATTRIBUTE / STYLE / PROPERTIES
+       newHL.textContent="I Like Pizza";
+       newHL.id="myh1";
+       newHL.style.color="tomato"
+       newHL.style.fontSize="20px";
+       newHL.style.textAlign="center"
+
+    // STEP 3  APPEND ELEMENT TO DOM 
+
+      //This will add it as a last chuild of the body
+       document.body.append(newHL); 
+       // this will add element at the beggining
+       document.body.prepend(newHL);
+       //adding eleemnt in a specific location 
+       document.getElementById("mybox").prepend(newHL)
+
+
+       const box2 = document.getElementById("mybox3");
+      // document.body.insertBefore(newHL,box2);
+
+       const boxes = document.querySelectorAll(".box")
+   //    document.body.insertBefore(newHL,boxes)
+
+    
+
+    // STEP 4 
+
+    // to remove an element select its parent ,.then use the following method
+    document.getElementById("mybox").removeChild(newHL)
+
+
+</script>
+</body>
+</html>

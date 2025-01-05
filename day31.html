@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Navigation Elements</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <ul id="fruits">
-        <li>apple</li>
-        <li>Banana</li>
-        <li>Kivi</li>
-        <li>hoee</li>
+      <li id="appl">apple</li>
+      <li>Banana</li>
+      <li id="kv">Kivi</li>
+      <li>hoee</li>
     </ul>
     <ul id="vegs">
-        <li>potato</li>
-        <li>onion</li>
-        <li>chilli</li>
-        <li> tomato</li>
+      <li>potato</li>
+      <li>onion</li>
+      <li>chilli</li>
+      <li>tomato</li>
     </ul>
     <ul id="dessert">
-        <li>pudding</li>
-        <li>IceCream</li>
-        <li>CheesCake</li>
-        <li>oreoshake</li>
+      <li>pudding</li>
+      <li>IceCream</li>
+      <li>CheesCake</li>
+      <li>oreoshake</li>
     </ul>
     <script>
-        // DOM Navigation = The Process of Navigating Throgh the Strcture Of an HTML Document  USing JavaScript 
+      // DOM Navigation = The Process of Navigating Throgh the Strcture Of an HTML Document  USing JavaScript
 
-        // .firstElementChild 
+      // .firstElementChild
 
-        const element = document.getElementById("vegs");
-        const first= element.firstElementChild;
-        first.style.backgroundColor ="cyan"
+      const element = document.getElementById("vegs");
+      const first = element.firstElementChild;
+      first.style.backgroundColor = "cyan";
+
+      var ule = document.querySelectorAll("ul");
+      ule.forEach((uls) => {
+        const li = uls.firstElementChild;
+        li.style.backgroundColor = "yellow";
+      });
+
+      // .lastElementChild
+
+      const UlList = document.getElementById("vegs");
+      const last = UlList.lastElementChild;
+      last.style.backgroundColor = "green";
+
+      const ulb = document.querySelectorAll("ul");
+      ulb.forEach((us) => {
+        var lastChild = us.lastElementChild;
+        lastChild.style.backgroundColor = "pink";
+      });
+
+      // .nextElementSibling
+
+      var vegList = document.getElementById("appl");
+      var next = vegList.nextElementSibling;
+      next.style.backgroundColor = "red";
+
+      // .previousElementSibling
+
+      var elementt = document.getElementById("kv");
+      var prevs = elementt.previousElementSibling;
+      prevs.style.backgroundColor = "brown";
+
+      // .parentElement
+
+      var elt = document.getElementById("kv");
+      const perent = elt.parentElement;
+      perent.style.backgroundColor = "blue";
+
+      // .children
+      const elment = document.getElementById("dessert");
+      const children = elment.children;
+      
+      children[0].style.backgroundColor = "purple";
+      Array.from(children).forEach( ch => {
+        ch.style.color = "red";
+      })
+      console.log(children);
 
 
-        var ule = document.querySelectorAll("ul");
-        ule.forEach(uls => {
-            const li = uls.firstElementChild;
-            li.style.backgroundColor="yellow" 
-        });
-
-
-
-        // .lastElementChild
-
-
-        const UlList = document.getElementById("vegs");    
-        
-        const last =UlList.lastElementChild;
-        last.style.backgroundColor="green"
-        const ule = document.querySelectorAll("ul");
-
-        ule.forEach(us =>{
-            var lastChild = us.lastElementChild;
-            lastChild.style.backgroundColor="pink"
-        })
-        // .previousElementSibling
-        // .nextElementSibling
-        // .parentElement
-        // .children
-        // .childElementCount
-    
+      // .childElementCount
+      const childrenc = elment.childElementCount;
+      console.log(childrenc);
     </script>
-</body>
+  </body>
 </html>
