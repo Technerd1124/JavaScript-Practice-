@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        button{
+            padding: 2vh;
+             background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <button class=".mybtn">HELLO 1</button>
+    <button class=".mybtn">HELLO 2</button>
+    <button class=".mybtn">HELLO 3</button>
+    <button class=".mybtn">HELLO 4</button>
+    <script>
+
+        var buttons  = document.querySelectorAll("button");
+
+        buttons.forEach(button => {
+
+            button.addEventListener('mouseover', event  =>{
+                    event.target.style.background = "orange";
+
+            
+            })
+            
+            button.addEventListener('mouseout', event  =>{
+                    event.target.style.background = "yellowgreen";
+            })
+
+
+             
+        })
+
+// NodeList  :  Static collection of HTML elemetns by ( ID , CLASS , Element) 💻💻
+// Can be created by using querySelectorAll() 
+//similar to any array , but np (map .filter , reduce )
+// nodelist Wonn't update to automatically reflect changes 
+
+
+const new_Btn = document.createElement("button"); //   STEP 1 
+new_Btn.textContent= " HELLO 5 ";  // STEP 2
+new_Btn.classList = " .mybtn";
+
+
+
+
+    </script>
+</body>
+</html>

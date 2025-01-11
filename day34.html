@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Visibility - HIDE / SHOW HMTL Content</title>
+</head>
+<body>
+    
+    <img src="./Mini Project/Clock-timer/pomodoro-2.jpg" alt="" width="300px" style="align-self: center;" id="img">
+
+    <br>
+    <button id="btn"> HIDE</button>
+    <script>
+     var buton =   document.getElementById("btn");
+     var imgs = document.getElementById("img");
+
+    buton.addEventListener("click", event =>{
+
+
+
+        if(buton.textContent==="HIDE"){
+            imgs.style.visibility="hidden";
+            buton.textContent="SHOW";
+        }
+        else{
+            imgs.style.visibility ="visible";
+            buton.textContent="HIDE";
+        }
+        
+
+
+    });
+     
+    /*
+
+     body se tag hi remove ho jayga na 🙆
+     
+       const button = document.getElementById("btn");
+        const image = document.getElementById("img");
+
+        button.addEventListener("click", () => {
+            if (image.style.display === "none") {
+                image.style.display = "block";
+                button.textContent = "HIDE";
+            } else {
+                image.style.display = "none";
+                button.textContent = "SHOW";
+            }
+        });
+    */
+    </script>
+</body>
+</html>

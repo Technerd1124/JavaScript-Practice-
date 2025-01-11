@@ -1,9 +1,10 @@
 body{
-    margin: 0;
+    margin: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 99vh;
+
 
 }
 
@@ -13,6 +14,8 @@ body{
      border-radius: 15px;
      max-width: 500px;
      overflow: hidden;
+     max-height: 99vh;
+   
 
 }
 

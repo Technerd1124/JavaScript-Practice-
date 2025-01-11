@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Key Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #f0f0f0;
+        }
+
+        #display {
+            font-size: 2rem;
+            margin: 20px;
+            color: #333;
+        }
+
+        input {
+            font-size: 1.5rem;
+            padding: 10px;
+            border: 2px solid #888;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Key Events Example</h1>
+    <p>Type in the input box below to see key event information.</p>
+    <input type="text" id="inputBox" placeholder="Start typing...">
+    <div id="display">
+        <p id="keyInfo">Press any key...</p>
+    </div>
+
+    <script>
+        // Select input box and display area
+        const inputBox = document.getElementById('inputBox');
+        const keyInfo = document.getElementById('keyInfo');
+
+        // Event listeners for key events
+        inputBox.addEventListener('keydown', (event) => {
+            keyInfo.innerHTML = `
+                <strong>Key Down</strong><br>
+                Key: ${event.key} <br>
+                Key Code: ${event.code} <br>
+                Key Code (Numeric): ${event.keyCode}
+            `;
+            console.log('Key Down:', event);
+        });
+
+        inputBox.addEventListener('keyup', (event) => {
+            keyInfo.innerHTML = `
+                <strong>Key Up</strong><br>
+                Key: ${event.key} <br>
+                Key Code: ${event.code} <br>
+                Key Code (Numeric): ${event.keyCode}
+            `;
+            console.log('Key Up:', event);
+        });
+
+        inputBox.addEventListener('keypress', (event) => {
+            keyInfo.innerHTML = `
+                <strong>Key Press (Deprecated)</strong><br>
+                Key: ${event.key} <br>
+                Key Code: ${event.code} <br>
+                Key Code (Numeric): ${event.keyCode}
+            `;
+            console.log('Key Press:', event);
+        });
+    </script>
+</body>
+</html>
