@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Call Back  Hell </title>
+</head>
+<body>
+    
+
+<script>
+// CallBack Hell = Situation  in JS where callbacks are nested within other callbaccks to the degree
+// where the code is difficult to read .
+// old pattern to handle asynchrounous function . use--?>
+// use  Promises  + async /await  to avoid callback hell
+
+function task1(callback){
+    setTimeout(() => {
+        console.log('Task 1 done');
+        callback();
+    },2000)
+}
+
+function task2( callback){
+    setTimeout(() => {
+        console.log('Task 2 done'); 
+        callback();
+    },1000)
+}
+ 
+function task3( callback){
+    setTimeout(() => {
+        console.log('Task 3 done');
+        callback();
+    },3000)
+}
+
+function task4(callback){
+    setTimeout(() => {
+        console.log('Task 4 done');
+        callback();
+    },1500)
+}
+
+task1( () =>{
+    task2( () => {
+        task3(()=>{
+            task4(() => console.log(" All tasks completed")
+            )
+        })
+    } )
+})
+
+
+</script>
+</body>
+</html>
