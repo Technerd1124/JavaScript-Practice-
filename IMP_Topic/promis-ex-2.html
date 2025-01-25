@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Prmises Exmaple 2</title>
+</head>
+<body>
+    <script>
+       let checkValid = new Promise((resolve, reject)=>{
+
+        let age =10;
+        if(age>=18){
+            resolve(" Your valid to vote")
+        }
+        else{
+            reject(" you're not eligable")
+        }
+       });
+      
+       checkValid 
+       .then((message) => document.write(message)) // on resolve
+        .catch((error)=> document.write(error)) ;       
+    </script>
+</body>
+</html>

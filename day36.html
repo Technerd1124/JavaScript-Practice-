@@ -9,37 +9,53 @@
     
 
 <script>
-// CallBack Hell = Situation  in JS where callbacks are nested within other callbaccks to the degree
+//   Hell = Situation  in JS where  s are nested within other callbaccks to the degree
 // where the code is difficult to read .
 // old pattern to handle asynchrounous function . use--?>
-// use  Promises  + async /await  to avoid callback hell
+// use  Promises  + async /await  to avoid   hell
 
-function task1(callback){
-    setTimeout(() => {
-        console.log('Task 1 done');
-        callback();
-    },2000)
+function task1( ){
+    return new Promise( (resolve , reject) => {
+        setTimeout(() => {
+            console.log('Task 1 done');
+              resolve();
+        },2000)
+    });
 }
 
-function task2( callback){
-    setTimeout(() => {
-        console.log('Task 2 done'); 
-        callback();
-    },1000)
+function task2(  ){
+    return new Promise(  ( resolve , reject) =>{
+        setTimeout(() => {
+            console.log('Task 2 done');
+            resolve();
+
+        },1000)
+    })
 }
  
-function task3( callback){
-    setTimeout(() => {
-        console.log('Task 3 done');
-        callback();
-    },3000)
+function task3(  ){
+    return new Promise(  ( resolve , reject) =>{
+        setTimeout(() => {
+            console.log('Task 3 done');
+            resolve();
+              
+        },3000)
+
+       
+    })
 }
 
-function task4(callback){
-    setTimeout(() => {
-        console.log('Task 4 done');
-        callback();
-    },1500)
+function task4( ){
+
+    return new Promise(  ( resolve , reject) =>{
+
+        setTimeout(() => {
+            console.log('Task 4 done');
+            resolve();
+              
+        },1500)
+       
+    })
 }
 
 task1( () =>{
